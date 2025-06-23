@@ -5,6 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Sistema de Notícias - As principais notícias do Brasil atualizadas em tempo real.">
+    <meta name="keywords" content="notícias, brasil, economia, esportes, mundo">
+    <meta name="author" content="Equipe Sistema de Notícias">
+    <meta property="og:title" content="RBA News">
+    <meta property="og:description" content="Fique por dentro das principais notícias do Brasil e do mundo">
+    <meta property="og:image" content="https://source.unsplash.com/600x400/?news">
+    <meta property="og:url" content="https://exemplo.com">
+    <meta name="twitter:card" content="summary_large_image">
     <title>Sistema de Notícias</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
@@ -12,7 +19,8 @@
 <body>
     <header>
         <h1>Sistema de Notícias</h1>
-        <nav>
+        <button class="nav-toggle" aria-label="Abrir menu">&#9776;</button>
+        <nav id="mainNav" role="navigation" aria-label="Menu principal">
             <ul>
                 <li><a href="#">Início</a></li>
                 <li><a href="#">Brasil</a></li>
@@ -22,62 +30,18 @@
             </ul>
         </nav>
         <div class="search-container">
-            <input type="text" id="searchInput" placeholder="Buscar notícias...">
+            <input type="text" id="searchInput" placeholder="Buscar notícias..." aria-label="Buscar notícias">
         </div>
+        <button id="themeToggle" aria-label="Alternar modo claro/escuro">🌙</button>
     </header>
 
-    <section class="highlight-carousel">
+    <section class="highlight-carousel" role="region" aria-label="Destaques" tabindex="0">
         <div class="highlight-slide">🚨 Última Hora: Governo anuncia novas medidas econômicas</div>
         <div class="highlight-slide">⚽ Esportes: Seleção Brasileira vence amistoso internacional</div>
         <div class="highlight-slide">🌎 Mundo: Nova cúpula climática acontece em Paris</div>
     </section>
 
-    <main id="newsContainer">
-        <section class="news-card">
-            <img src="https://source.unsplash.com/600x400/?news" alt="Notícia">
-            <div>
-                <h2>Governo Anuncia Novo Pacote Econômico</h2>
-                <p>O governo brasileiro anunciou nesta segunda-feira um novo pacote econômico para impulsionar o mercado interno.</p>
-                <a href="#">Leia mais</a>
-            </div>
-        </section>
-
-        <section class="news-card">
-            <img src="https://source.unsplash.com/600x400/?economy" alt="Notícia">
-            <div>
-                <h2>Inflação tem leve queda em junho</h2>
-                <p>O índice oficial da inflação caiu 0,3% no mês de junho, segundo dados do IBGE.</p>
-                <a href="#">Leia mais</a>
-            </div>
-        </section>
-
-        <section class="news-card">
-            <img src="https://source.unsplash.com/600x400/?sports" alt="Notícia">
-            <div>
-                <h2>Seleção Brasileira Goleia em Amistoso</h2>
-                <p>O Brasil venceu por 4x0 em um amistoso realizado no Maracanã.</p>
-                <a href="#">Leia mais</a>
-            </div>
-        </section>
-
-        <section class="news-card">
-            <img src="https://source.unsplash.com/600x400/?climate" alt="Notícia">
-            <div>
-                <h2>Cúpula Climática em Paris Ganha Destaque</h2>
-                <p>Líderes mundiais discutem novas metas de redução de carbono até 2030.</p>
-                <a href="#">Leia mais</a>
-            </div>
-        </section>
-
-        <section class="news-card">
-            <img src="https://source.unsplash.com/600x400/?technology" alt="Notícia">
-            <div>
-                <h2>Novas Tecnologias Prometem Revolucionar o Mercado</h2>
-                <p>Startups brasileiras estão liderando a corrida por inovações tecnológicas em 2025.</p>
-                <a href="#">Leia mais</a>
-            </div>
-        </section>
-    </main>
+    <main id="newsContainer" aria-live="polite"></main>
 
     <footer>
         <p>&copy; 2025 Sistema de Notícias. Todos os direitos reservados.</p>
