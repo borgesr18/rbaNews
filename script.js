@@ -1,4 +1,4 @@
-// Carrega notícias de um arquivo JSON e renderiza na página
+// Renderiza a lista de notícias recebida
 function renderNews(list) {
   const container = document.getElementById('newsContainer');
   container.innerHTML = '';
@@ -26,14 +26,35 @@ function filterNews() {
   });
 }
 
+// Busca notícias de uma API externa com fallback para o arquivo local
+const API_URL = 'https://gnews.io/api/v4/top-headlines?lang=pt&token=YOUR_API_KEY';
+
 function loadNews() {
-  fetch('news.json')
+  fetch(API_URL)
     .then(res => res.json())
     .then(data => {
-      renderNews(data);
-      document.getElementById('searchInput').addEventListener('input', filterNews);
+      if (Array.isArray(data.articles)) {
+        const list = data.articles.map(n => ({
+          title: n.title,
+          content: n.description || '',
+          img: n.image || 'https://source.unsplash.com/600x400/?news',
+          alt: n.title
+        }));
+        renderNews(list);
+      } else {
+        throw new Error('Formato inesperado');
+      }
     })
-    .catch(err => console.error('Erro ao carregar notícias', err));
+    .catch(() => {
+      // fallback para arquivo local
+      fetch('news.json')
+        .then(res => res.json())
+        .then(renderNews)
+        .catch(err => console.error('Erro ao carregar notícias', err));
+    })
+    .finally(() => {
+      document.getElementById('searchInput').addEventListener('input', filterNews);
+    });
 }
 
 // menu responsivo
@@ -50,4 +71,7 @@ themeButton.addEventListener('click', () => {
 
 // inicia página
 document.addEventListener('DOMContentLoaded', loadNews);
+
+// Atualiza as notícias a cada 5 horas
+setInterval(loadNews, 5 * 60 * 60 * 1000);
 
