@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Governo Anuncia Novo Pacote Econômico",
+    "content": "O governo brasileiro anunciou nesta segunda-feira um novo pacote econômico para impulsionar o mercado interno.",
+    "img": "https://source.unsplash.com/600x400/?news",
+    "alt": "Ministro da Economia em coletiva"
+  },
+  {
+    "title": "Inflação tem leve queda em junho",
+    "content": "O índice oficial da inflação caiu 0,3% no mês de junho, segundo dados do IBGE.",
+    "img": "https://source.unsplash.com/600x400/?economy",
+    "alt": "Gráfico econômico demonstrando queda"
+  },
+  {
+    "title": "Seleção Brasileira Goleia em Amistoso",
+    "content": "O Brasil venceu por 4x0 em um amistoso realizado no Maracanã.",
+    "img": "https://source.unsplash.com/600x400/?sports",
+    "alt": "Jogadores comemorando gol"
+  },
+  {
+    "title": "Cúpula Climática em Paris Ganha Destaque",
+    "content": "Líderes mundiais discutem novas metas de redução de carbono até 2030.",
+    "img": "https://source.unsplash.com/600x400/?climate",
+    "alt": "Líderes mundiais reunidos em conferência"
+  },
+  {
+    "title": "Novas Tecnologias Prometem Revolucionar o Mercado",
+    "content": "Startups brasileiras estão liderando a corrida por inovações tecnológicas em 2025.",
+    "img": "https://source.unsplash.com/600x400/?technology",
+    "alt": "Representação de tecnologia futurista"
+  }
+]
